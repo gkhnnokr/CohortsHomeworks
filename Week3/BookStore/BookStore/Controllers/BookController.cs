@@ -8,6 +8,9 @@ using BookStore.BookOperations.UpdateBook;
 using static BookStore.BookOperations.UpdateBook.UpdateBookCommand;
 using BookStore.BookOperations.DeleteBook;
 using AutoMapper;
+using BookStore.BookOperations.CreateBook;
+using FluentValidation.Results;
+using FluentValidation;
 
 namespace BookStore.Controllers
 {
@@ -42,6 +45,8 @@ namespace BookStore.Controllers
             {
                 GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
                 query.BookId = id;
+                GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator();
+                validator.ValidateAndThrow(query);
                 result = query.Handle();
             }
             catch (Exception ex)
@@ -61,7 +66,24 @@ namespace BookStore.Controllers
             try
             {
                 command.Model = newBook;
+
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                ValidationResult result = validator.Validate(command);
+                validator.ValidateAndThrow(command);
                 command.Handle();
+
+                //if (!result.IsValid) 
+                //{
+                //    foreach (var item in result.Errors)
+                //    {
+                //        Console.WriteLine("Property: " + item.PropertyName + "- Error Message: " + item.ErrorMessage);
+                //    }
+                //}
+                //else
+                //{
+                //    command.Handle();
+                //}
+
             }
             catch (Exception ex)
             {
@@ -80,6 +102,10 @@ namespace BookStore.Controllers
                 UpdateBookCommand command = new UpdateBookCommand(_context);
                 command.BookId = id;
                 command.Model = updatedBook;
+
+                UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+                validator.ValidateAndThrow(command);
+
                 command.Handle();
             }
             catch (Exception ex)
@@ -98,6 +124,8 @@ namespace BookStore.Controllers
             {
                 DeleteBookCommand command = new DeleteBookCommand(_context);
                 command.BookId = id;
+                DeleteBookCommandValidation validator = new DeleteBookCommandValidation();
+                validator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
