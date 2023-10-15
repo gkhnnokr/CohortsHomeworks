@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BookStore.DBOperation;
-
+using BookStore.Entities;
 
 namespace BookStore.BooksOperations.CreateBook;
 

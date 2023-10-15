@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using AutoMapper;
 using BookStore.Middlewares;
+using BookStore.Sevices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,7 @@ builder.Services.AddScoped<DataGenerator>();
 // Add services for in-memory database and BookRepository
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+builder.Services.AddSingleton<ILoggerService,ConsoleLogger>();
 
 var app = builder.Build();
 

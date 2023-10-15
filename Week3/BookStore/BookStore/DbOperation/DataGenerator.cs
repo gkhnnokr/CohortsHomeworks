@@ -1,5 +1,6 @@
 ﻿using BookStore;
 using BookStore.DBOperation;
+using BookStore.Entities;
 using Microsoft.EntityFrameworkCore;
 
 public class DataGenerator
@@ -12,6 +13,21 @@ public class DataGenerator
             {
                 return; 
             }
+
+            context.Genres.AddRange(
+                new Genre
+                {
+                    Name = "Personal Growth"
+                },
+                new Genre
+                {
+                    Name = "Science Fiction"
+                },
+                new Genre
+                {
+                    Name = "Romance"
+                }
+            );
 
             context.Books.AddRange(
                 new Book
