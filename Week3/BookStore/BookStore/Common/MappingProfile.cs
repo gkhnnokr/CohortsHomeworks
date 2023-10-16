@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookStore.Application.AutorOperations.Queries.GetAuthorDetail;
+using BookStore.Application.AutorOperations.Queries.GetAutors;
 using BookStore.BookOperations.GetBookDetail;
 using BookStore.BookOperations.GetBooks;
 using BookStore.Entities;
@@ -17,5 +19,7 @@ public class MappingProfile : Profile
         CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
         CreateMap<Genre, GenresViewModel>();
         CreateMap<Genre, GenreDetailViewModel>();
+        CreateMap<Author, AuthorsViewModel>();
+        CreateMap<Author, AuthorDetailViewModel>();
     }
 }

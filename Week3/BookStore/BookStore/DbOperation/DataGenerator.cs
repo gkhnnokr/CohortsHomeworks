@@ -14,6 +14,25 @@ public class DataGenerator
                 return; 
             }
 
+            context.Authors.AddRange(
+                new Author
+                {
+                    Name = "GGGG",
+                    Surname = "bbbbbb"
+                },
+                new Author
+                {
+                    Name = "OOOOO",
+                    Surname = "bbbbbb"
+                },
+                new Author
+                {
+                    Name = "MMMMM",
+                    Surname = "bbbbbb"
+                }
+            );
+
+
             context.Genres.AddRange(
                 new Genre
                 {

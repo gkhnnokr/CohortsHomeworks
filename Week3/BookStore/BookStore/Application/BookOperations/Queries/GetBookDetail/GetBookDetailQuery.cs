@@ -26,11 +26,7 @@ public class GetBookDetailQuery
         if (book is null)
             throw new InvalidOperationException("Kitap Bulunamadı");
 
-        BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);  /*new BookDetailViewModel();*/
-        //vm.Title = book.Title;
-        //vm.PageCount = book.PageCount;
-        //vm.PublishDate = book.PublishDate.Date.ToString("dd/MM/yyyy");
-        //vm.Genre = ((GenreEnum)book.GenreId).ToString();
+        BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
         return vm;
     }
 }

@@ -25,6 +25,7 @@ namespace BookStore.Application.GenreOperations.Commands.UpdateGenre
 
             genre.Name = string.IsNullOrEmpty(Model.Name.Trim()) ? genre.Name : Model.Name;
             genre.IsActive = Model.IsActive;
+
             _context.SaveChanges();
         }
 
