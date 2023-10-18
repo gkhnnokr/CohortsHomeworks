@@ -5,6 +5,7 @@ using BookStore.Application.AutorOperations.Commands.UpdateAutor;
 using BookStore.Application.AutorOperations.Queries.GetAuthorDetail;
 using BookStore.Application.AutorOperations.Queries.GetAutorDetail;
 using BookStore.Application.AutorOperations.Queries.GetAutors;
+using BookStore.DbOperation;
 using BookStore.DBOperation;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ namespace BookStore.Controllers
     [ApiController]
     public class AuthorController : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
         public AuthorController(BookStoreDbContext context, IMapper mapper)

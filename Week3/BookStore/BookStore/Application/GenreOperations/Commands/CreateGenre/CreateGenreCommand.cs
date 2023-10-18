@@ -1,4 +1,5 @@
-﻿using BookStore.DBOperation;
+﻿using BookStore.DbOperation;
+using BookStore.DBOperation;
 using BookStore.Entities;
 
 namespace BookStore.Application.GenreOperations.Commands.CreateGenreCommand
@@ -7,9 +8,9 @@ namespace BookStore.Application.GenreOperations.Commands.CreateGenreCommand
     {
         public CreateGenreModel Model { get; set; }
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public CreateGenreCommand(BookStoreDbContext context)
+        public CreateGenreCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

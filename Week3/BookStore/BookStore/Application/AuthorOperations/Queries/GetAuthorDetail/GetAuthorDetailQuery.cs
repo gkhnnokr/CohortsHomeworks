@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
+using BookStore.DbOperation;
 using BookStore.DBOperation;
 
 namespace BookStore.Application.AutorOperations.Queries.GetAuthorDetail
 {
     public class GetAuthorDetailQuery
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
 
         private readonly IMapper _mapper;
 
         public int AuthorId { set; get; }
-        public GetAuthorDetailQuery(BookStoreDbContext dbContext, IMapper mapper)
+        public GetAuthorDetailQuery(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "BookStore\BookStore.csproj", "{9C31BCE6-CC75-47FD-B29E-3649EFF7B2E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A9F161BA-815A-4881-9D79-115D92FC1467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.UnitTests", "Tests\BookStore.UnitTests\BookStore.UnitTests.csproj", "{B355C614-3969-422F-B1B7-D1E597886A67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +19,18 @@ Global
 		{9C31BCE6-CC75-47FD-B29E-3649EFF7B2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C31BCE6-CC75-47FD-B29E-3649EFF7B2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C31BCE6-CC75-47FD-B29E-3649EFF7B2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B355C614-3969-422F-B1B7-D1E597886A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B355C614-3969-422F-B1B7-D1E597886A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B355C614-3969-422F-B1B7-D1E597886A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B355C614-3969-422F-B1B7-D1E597886A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BA091DC-7D75-46A6-B245-5FF488E09B2B}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B355C614-3969-422F-B1B7-D1E597886A67} = {A9F161BA-815A-4881-9D79-115D92FC1467}
 	EndGlobalSection
 EndGlobal

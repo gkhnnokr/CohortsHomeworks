@@ -11,6 +11,7 @@ using BookStore.BooksOperations.CreateBook;
 using static BookStore.BookOperations.UpdateBook.UpdateBookCommand;
 using BookStore.BookOperations.DeleteBook;
 using BookStore.BookOperations.UpdateBook;
+using BookStore.DbOperation;
 
 namespace BookStore.Controllers
 {
@@ -19,7 +20,7 @@ namespace BookStore.Controllers
     public class BookController : ControllerBase
     {
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
         public BookController(BookStoreDbContext context, IMapper mapper)

@@ -1,15 +1,16 @@
-﻿using BookStore.DBOperation;
+﻿using BookStore.DbOperation;
+using BookStore.DBOperation;
 
 namespace BookStore.Application.AutorOperations.Commands.UpdateAutor
 {
     public class UpdateAuthorCommand
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         public int AuthorId { get; set; }
 
         public UpdateAuthorModel Model { get; set; }
 
-        public UpdateAuthorCommand(BookStoreDbContext context)
+        public UpdateAuthorCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

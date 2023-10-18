@@ -1,16 +1,17 @@
-﻿using BookStore.DBOperation;
+﻿using BookStore.DbOperation;
+using BookStore.DBOperation;
 
 namespace BookStore.BookOperations.UpdateBook;
 
 public class UpdateBookCommand
 {
 
-    private readonly BookStoreDbContext _context;
+    private readonly IBookStoreDbContext _context;
     public int BookId { get; set; }
 
     public UpdateBookModel Model { get; set; }
 
-    public UpdateBookCommand(BookStoreDbContext context)
+    public UpdateBookCommand(IBookStoreDbContext context)
     {
         _context = context;
     }
